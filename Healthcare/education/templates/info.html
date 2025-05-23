@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Information</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        /* Background image and gradient */
+            body {
+                background: linear-gradient(to right, rgba(0, 175, 155, 0.8), rgba(0, 123, 255, 0.7)),
+                    url('https://source.unsplash.com/1600x900/?healthcare,doctor') no-repeat center center fixed;
+                background-size: cover;
+                font-family: 'Roboto', sans-serif;
+                color: white;
+                transition: background 0.3s ease-in-out;
+            }
+        
+
+        /* Page title styling with animation */
+        h1 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 4rem;
+            font-weight: bolder;
+            color: white;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Search bar styling */
+        .form-control-lg {
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        .form-control-lg:focus {
+            background-color: #f8f9fa;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-lg {
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-lg:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Information card hover effect */
+        .card {
+            background-color: #f8f9fa;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 15px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-title, .card-text {
+            color: #343a40;
+        }
+
+        .btn-outline-primary {
+            border-radius: 50px;
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #007bff;
+            color: white;
+            box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
+        }
+
+        /* Spacing between the cards */
+        .row {
+            margin-top: 2rem;
+        }
+
+        /* Button interaction */
+        .btn {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 123, 255, 0.3);
+        }
+
+        /* Footer spacing for aesthetic margin */
+        footer {
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <!-- Page Title -->
+        <h1 class="text-center mb-4">Health Information</h1>
+
+        <!-- Search Bar -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8">
+                <form method="GET" action="{% url 'info' %}" class="form-inline justify-content-center">
+                    <input class="form-control form-control-lg w-75" type="search" name="q" placeholder="Search for health information..." aria-label="Search">
+                    <button class="btn btn-primary btn-lg ml-2" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Information Grid -->
+        <div class="row">
+            {% for information in informations %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ information.title }}</h5>
+                        <p class="card-text">{{ information.description }}</p>
+                        <a href="{% url 'information_detail' information.id %}" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

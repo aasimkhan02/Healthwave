@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Health Education</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        /* Hero section background and layout */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/1600x900/?health,wellness') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        /* Content wrapper */
+        .content-wrapper {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            max-width: 800px;
+            text-align: center;
+        }
+
+        /* Title styles */
+        h1 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+
+        /* Custom buttons with hover and animation */
+        .btn-custom {
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-videos {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-info-custom {
+            background-color: #17a2b8;
+            color: white;
+        }
+
+        .btn-custom:hover {
+            transform: scale(1.05);
+        }
+
+        /* Subtle hover effects for buttons */
+        .btn-videos:hover {
+            background-color: #218838;
+        }
+
+        .btn-info-custom:hover {
+            background-color: #138496;
+        }
+
+        /* Welcome text and quote */
+        h2 {
+            margin-bottom: 10px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        blockquote {
+            font-style: italic;
+            margin-top: 20px;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .blockquote-footer {
+            color: #6c757d;
+            font-size: 1rem;
+        }
+
+        /* Fade-in animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero section with background image -->
+    <div class="hero-section">
+        <div class="container text-center content-wrapper">
+            <!-- Title -->
+            <h1 class="display-4 font-weight-bold">Interactive Health Education</h1>
+
+            <!-- Buttons for Videos and Information -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-8 d-flex justify-content-around">
+                    <a href="{% url 'video_list' %}" class="btn btn-custom btn-videos">Health Videos</a>
+                    <a href="{% url 'info' %}" class="btn btn-custom btn-info-custom">Health Information</a>
+
+                </div>
+            </div>
+
+            <!-- Welcome Text with Quote -->
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h2>Welcome to Interactive Health Education</h2>
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"The greatest wealth is health."</p>
+                        <footer class="blockquote-footer">Virgil</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div><!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Interactive Health Education</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap" rel="stylesheet">
+        <style>
+            /* Hero section with improved background blend and layout */
+            .hero-section {
+                background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 123, 255, 0.6)), 
+                            url('https://source.unsplash.com/1600x900/?health,wellness') no-repeat center center/cover;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+            }
+    
+            /* Content wrapper for centered text and buttons */
+            .content-wrapper {
+                background-color: rgba(255, 255, 255, 0.9);
+                padding: 50px;
+                border-radius: 15px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                text-align: center;
+                max-width: 850px;
+            }
+    
+            /* Title and subtitle styling */
+            h1 {
+                font-family: 'Poppins', sans-serif;
+                font-size: 3.5rem;
+                font-weight: 600;
+                margin-bottom: 20px;
+                animation: fadeIn 1s ease;
+                color: #007bff;
+            }
+    
+            h2 {
+                margin-top: 15px;
+                font-family: 'Poppins', sans-serif;
+                font-size: 2rem;
+                animation: fadeIn 1.5s ease;
+                color: #333;
+            }
+    
+            /* Buttons styling */
+            .btn-custom {
+                padding: 12px 35px;
+                font-size: 1.2rem;
+                border-radius: 50px;
+                transition: background-color 0.3s, transform 0.3s ease;
+            }
+    
+            .btn-videos {
+                background-color: #28a745;
+                color: white;
+                margin-right: 10px;
+            }
+    
+            .btn-info-custom {
+                background-color: #17a2b8;
+                color: white;
+            }
+    
+            .btn-custom:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            }
+    
+            /* Welcome text and quote */
+            blockquote {
+                font-style: italic;
+                margin-top: 30px;
+                font-size: 1.2rem;
+                animation: fadeInUp 1.8s ease;
+            }
+    
+            .blockquote-footer {
+                color: #6c757d;
+            }
+            p{
+                color:#03a9ac;
+            }
+    
+            /* Fade-in animations */
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+    
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+    
+            /* Responsive design */
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: 2.5rem;
+                }
+    
+                h2 {
+                    font-size: 1.5rem;
+                }
+    
+                .content-wrapper {
+                    padding: 30px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Hero section with background image -->
+        <div class="hero-section">
+            <div class="container content-wrapper">
+                <!-- Title -->
+                <h1 class="display-4">Interactive Health Education</h1>
+    
+                <!-- Welcome Text -->
+                <h2>Your Health, Our Priority</h2>
+    
+                <!-- Buttons for Videos and Information -->
+                <div class="d-flex justify-content-center mt-4">
+                    <a href="/videos" class="btn btn-custom btn-videos">Watch Health Videos</a>
+                    <a href="/info" class="btn btn-custom btn-info-custom">Explore Health Info</a>
+                </div>
+    
+                <!-- Quote -->
+                <blockquote class="blockquote mt-4">
+                    <p>"The greatest wealth is health."</p>
+                    <footer class="blockquote-footer">Virgil</footer>
+                </blockquote>
+            </div>
+        </div>
+    
+        <!-- Bootstrap JS and dependencies -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+    </html>
+    
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

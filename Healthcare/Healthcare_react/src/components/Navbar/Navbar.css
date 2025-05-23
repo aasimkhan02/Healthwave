@@ -1,0 +1,133 @@
+.Navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    z-index: 100;
+    background-color: white;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.Navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.79); 
+}
+
+.Navbar h1 {
+    font-family: "Passion One", sans-serif;
+    color: #167bb9;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+.Navbar ul {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    gap: 4.5vh;
+    color: #2C3E50;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-left: 10%;
+    font-size: 17px;
+    cursor: pointer;
+    position: relative;
+}
+
+.Navbar ul li {
+    position: relative;
+    padding: 10px 0;
+}
+
+.Navbar ul li a {
+    color: #2C3E50; 
+    text-decoration: none; 
+}
+
+.Navbar ul li::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: black;
+    transition: width 1s ease, left 1s ease;
+}
+
+.Navbar ul li:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.Navbar ul li.dropdown:hover::after {
+    width: 0;
+}
+
+.Navbar ul .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -7vh;
+    background-color: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    z-index: 10;
+    width: 30vh;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.Navbar ul .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.Navbar ul .dropdown-menu li {
+    padding: 10px;
+}
+
+.Navbar ul .dropdown-menu li a {
+    text-decoration: none; 
+}
+
+.Navbar ul .dropdown-menu li::after {
+    content: none; 
+}
+
+.Navbar .dropdown-menu li:hover{
+    background-color: #167bb9;
+    color: white;
+    border-radius: 5px;
+}
+
+.Navbar ul button {
+    background-color: white;
+    width: 20vh;
+    height: 6.5vh;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-left: 1%;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.Navbar ul button:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 5px 5px black;
+}

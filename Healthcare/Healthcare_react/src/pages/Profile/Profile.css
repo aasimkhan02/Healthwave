@@ -1,0 +1,541 @@
+.Profile-page {
+    height: auto;
+    width: 100%;
+    margin-bottom: 10vh;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(237, 237, 237);
+}
+.Overview-section{
+    display: flex;
+    flex-direction: column;   
+    padding-top: 2%;
+    width: 100%;
+    padding-left: 10%;
+    transition: padding-left 0.7s ease-in-out;
+    gap: 30px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.Profile-section{
+    padding-top: 2%;
+    width: 100%;
+    padding-left: 10%;
+    height: auto;
+    transition: 0.7s ease-in-out;
+    flex-direction: column;
+    gap: 30px;
+    background-color: white;
+}
+.Lab-section{
+    padding-top: 2%;
+    width: 100%;
+    padding-left: 10%;
+    height: auto;
+    transition: 0.7s ease-in-out;
+    flex-direction: column;
+    gap: 30px;
+    background-color: white;
+    display: none;
+}
+.Vaccination-section{
+    padding-top: 2%;
+    width: 100%;
+    padding-left: 10%;
+    height: auto;
+    transition: 0.7s ease-in-out;
+    flex-direction: column;
+    gap: 30px;
+    display: none;
+    background-color: white;
+}
+.Contacts-section{
+    padding-top: 2%;
+    width: 100%;
+    padding-left: 10%;
+    height: auto;
+    transition: 0.7s ease-in-out;
+    flex-direction: column;
+    gap: 30px;
+    display: none;
+    background-color: white;
+}
+.Profile-section.expanded, .Lab-section.expanded, .Vaccination-section.expanded, .Contacts-section.expanded{
+    padding-left: 30%;
+}
+.Sidebar{
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+    position: fixed;
+    left: -20%;
+    transition: all 0.7s ease-in-out;
+    z-index: 1;
+    overflow-y: hidden;
+}
+.Sidebar.move-right{
+    transform: translateX(80%);
+}
+.Sidebar-button {
+    background-color: #007bff;
+    width: 20%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+.Sidebar-button h1 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 8.5vh;
+    cursor: pointer;
+}
+
+.Sidebar-button h1:hover {
+    background-color: white;
+}
+
+.Sidebar-button h1:not(.no-hover):hover svg {
+    color: black;
+}
+
+.Sidebar-button h1.no-hover:hover {
+    background-color: transparent;
+}
+.Sidebar-button:hover ~ .Sidebar-button-details p {
+    background-color: red;
+}
+.Sidebar-button svg {
+    color: white;
+}
+.Sidebar-button .feather-chevronRight {
+    transition: transform 0.3s ease;
+}
+
+.Sidebar.move-right .feather-chevronRight {
+    transform: rotate(180deg); 
+}
+
+
+.Sidebar-button-details {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.Sidebar-button-details p{
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.758);
+    font-size: 20px;
+    height: 8.5vh;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.Logo {
+    font-family: "Passion One", sans-serif;
+    color: #167bb9;
+    letter-spacing: 3px;
+    height: 10vh;
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Sidebar-button-details p {
+    transition: all 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.Sidebar-button-details p:hover {
+    color: #007bff;
+    background-color: rgb(200, 200, 200); 
+}
+
+.title{
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: #007bff;
+    font-weight: bold;
+}
+.Overview-section.expanded{
+    padding-left: 30%;
+}
+.Overview-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    width: 95%;
+    height: auto;
+}
+.Overview-container .grid1{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+.Overview-container .grid2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.Profile-overview {
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.132);
+    align-items: center;
+    transition: 0.7s ease-in-out;
+}
+
+.Vertical-line {
+    width: 3px;
+    background-color: rgba(106, 106, 106, 0.244);
+    height: 80%;
+    border-radius: 15px;
+}
+
+.Profile-overview-basics {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+    width: 55%;
+    height: 100%;
+}
+
+.Profile-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5%;
+    gap: 5px;
+}
+
+.Profile-image img {
+    width: 30%;
+}
+
+.Profile-other-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px 100px;
+    padding: 1% 10%;
+    font-size: 18px;
+    color: rgb(88, 88, 88);
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: 0.7s ease-in-out;
+}
+
+.Profile-other-details.expanded {
+    gap: 10px 50px;
+    font-size: 16px;
+}
+
+.Profile-other-details.expanded span {
+    font-size: 17px;
+}
+
+.Profile-other-details p {
+    margin: 0;
+}
+
+.Profile-overview span {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.Profile-overview-others {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: 100%;
+    padding: 5% 7%;
+    color: rgb(88, 88, 88);
+    font-size: 19px;
+    gap: 33px;
+    transition: 0.7s ease-in-out;
+}
+
+.Profile-overview-others.expanded {
+    font-size: 16px;
+    padding: 5% 5%;
+}
+
+.Profile-overview-others.expanded span {
+    font-size: 18px;
+}
+
+.Setup-goals {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.132);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 7% 0%;
+    gap: 15px;
+}
+.horizontal-line{
+    width: 100%;
+    height: 2px;
+    background-color: rgba(106, 106, 106, 0.244);
+    border: none;
+}
+.Setup-goals .weight, .Hydration{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 0% 10%;
+    gap: 5vh;
+    color: rgb(88, 88, 88);
+    transition: 0.7s ease-in-out;
+}
+.Setup-goals .weight-goal, .hydration-goal{
+    color: rgb(50, 50, 50);
+}
+.Setup-goals .weight.expanded{
+    font-size: 13px;
+}
+.Setup-goals .Hydration.expanded{
+    font-size: 13px;
+}
+.target{
+    width: 30%;
+}
+.Current-medications ul, .vaccination-records ul, .lab-results ul{
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+.Current-medications ul li, .vaccination-records ul li, .lab-results ul li{
+    width: 100%;
+    height: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: 0% 10%;
+    gap: 5vh;
+    color: #585858;
+    letter-spacing: 1px;
+}
+.Current-medications, .vaccination-records, .Emergency-contacts{
+    background-color: white;
+    width: 100%;
+    height: 50vh;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.132);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 5% 0%;
+}
+.Emergency-contacts ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.Emergency-contacts ul li{
+    color: #585858;
+}
+.grid3{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+.Patient-notes, .lab-results{
+    background-color: white;
+    width: 100%;
+    height: 60vh;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.132);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 5% 0%;
+}
+.content {
+    width: 100%;
+    padding: 2% 10%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content auto;
+    row-gap: 25px;
+    column-gap: 140px;
+}
+
+.content h3:nth-child(1),
+.content h3:nth-child(2) {
+    grid-row: 1; 
+    height: 10px;
+}
+
+.content p {
+    grid-column: 1 / span 2; 
+    grid-row: 2; 
+}
+.flex {
+    display: flex;
+}
+
+.none {
+    display: none;
+}
+
+
+.Profile-container, .Lab-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    padding-right: 5%;
+}
+.main-identification{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+}
+.personal-information, .Medical-information, .Lifestyle-information{
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.183);
+    padding: 3% 4%;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+.personal-information .Username, .Location, .Age-container, .Weight-Height, .Blood-sugar-level,
+.Cholesterol-level {
+    display: flex;
+    flex-direction: row;
+    gap: 10vh;
+    width: 100%;
+}
+
+.Firstname, .Lastname, .Email, .PhoneNumber, .Address, .State, .City, .DOB, .Age, .Gender, .Blood-group,
+.Weight, .Height, .Medical-conditions, .Allergies, .Blood-pressure, .Blood-sugar-level-fasting,
+.Blood-sugar-level-postprandial, .Cholesterol-level-ldl, .Cholesterol-level-hdl, .Disabilities, .BMI,
+.Smoking, .Alcohol, .Exercise, .Diet, .Sleep, .Stress , .Water{
+    display: flex;
+    gap: 1.5vh;
+    flex-direction: column;
+}
+
+.Username input, .Location input, .Age-container input, .Weight-Height input, .Blood-sugar-level input,
+.Cholesterol-level input {
+    width: 50vh;
+    height: 5vh;
+    text-align: left;
+    padding-left: 7%;
+}
+
+.Email input, .PhoneNumber input, .Address input, .Gender input, .Blood-group input,
+.Medical-conditions input, .Allergies input, .Blood-pressure input, .Disabilities input, .BMI input,
+.Smoking input, .Alcohol input, .Exercise input, .Diet input, .Sleep input, .Stress input, .Water input {
+    width: 50vh;
+    height: 5vh;
+    text-align: left;
+    padding-left: 3%;
+}
+
+.Save{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Add-new-entry{
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.183);
+    padding: 3% 4%;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+.Test-type, .Test-description, .Test-results, .Test-date, .Doctor-provider-name{
+    display: flex;
+    gap: 1.5vh;
+    flex-direction: column;
+}
+.Test-type input, .Test-description input, .Test-date input, .Doctor-provider-name input{
+    width: 50vh;
+    height: 5vh;
+    text-align: left;
+    padding-left: 3%;
+}
+.Save-Delete{
+    display: flex;
+    flex-direction: row;
+    gap: 10vh;
+}
+.Vaccine-name, .Vaccine-manufacturer, .Dose-Number, .Vaccine-date, .Next-dose-date, 
+.Administering-Facility, .Administering-provider, .Expiration-Date, .Side-effects, .vaccine-notes{
+    display: flex;
+    gap: 1.5vh;
+    flex-direction: column;
+}
+.Vaccine-name input, .Vaccine-manufacturer input, .Dose-Number input, 
+.Vaccine-date input, .Next-dose-date input, .Administering-Facility input, .Administering-provider input
+, .Expiration-Date input, .Side-effects input, .vaccine-notes input{
+    width: 50vh;
+    height: 5vh;
+    text-align: left;
+    padding-left: 3%;
+}
+.Primary-contact, .Secondary-contact{
+    width: 90%;
+    height: auto;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 3% 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.Contact-name, .Phone-number, .Contact-relation, .Alternative-phone-number, .Contact-email
+.Secondary-contact-name, .Secondary-contact-relation, .Secondary-phone-number, .Secondary-alternative-phone-number
+, .Secondary-contact-email{
+    display: flex;
+    gap: 1.5vh;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.Contact-name input, .Phone-number input, .Contact-relation input, .Alternative-phone-number input
+, .Contact-email input, .Secondary-contact-name input, .Secondary-contact-relation input,
+.Secondary-phone-number input, .Secondary-alternative-phone-number input, .Secondary-contact-email input{
+    width: 50vh;
+    height: 5vh;
+    text-align: left;
+    padding-left: 3%;
+}

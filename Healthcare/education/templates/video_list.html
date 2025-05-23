@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Videos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Background image with gradient overlay */
+        body {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 123, 255, 0.6)), 
+                        url('https://source.unsplash.com/1600x900/?healthcare,wellness') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* Hover effect on video title */
+        .card-title {
+            transition: color 0.3s ease;
+        }
+
+        .card-title:hover {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+        /* Interactive video box */
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.9); /* Light background for contrast */
+            color: #333;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        /* Center video title */
+        .card-title {
+            text-align: center;
+        }
+
+        /* Style for video descriptions */
+        .card-text {
+            text-align: justify;
+        }
+
+        /* Interactive Heading */
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        h1:hover {
+            transform: scale(1.1);
+            color: #ffc107;
+        }
+
+        /* Search bar styling */
+        .form-control {
+            border-radius: 50px;
+            padding: 15px;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            border-radius: 50px;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <!-- Page Title -->
+        <h1 class="mb-4">Health Videos</h1>
+
+        <!-- Search Bar -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8">
+                <form method="GET" action="{% url 'video_list' %}" class="form-inline justify-content-center">
+                    <input class="form-control form-control-lg w-75" type="search" name="q" placeholder="Search for health videos..." aria-label="Search">
+                    <button class="btn btn-primary btn-lg ml-2" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Video Grid -->
+        <div class="row">
+            {% for video in videos %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ video.title }}</h5>
+                        <!-- Embedding YouTube/Vimeo video -->
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="{{ video.video_url }}" allowfullscreen></iframe>
+                        </div>
+                        <p class="card-text">{{ video.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

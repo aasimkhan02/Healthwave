@@ -1,0 +1,388 @@
+.Medication {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Medication-search-bar {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10vh;
+}
+
+.Medication-search-bar .background {
+    width: 100%;
+    height: inherit;
+    background-image: url(./../../assets/search-background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(40%);
+}
+
+.Medication-search-bar .search-bar {
+    position: absolute;
+    top: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 2vh;
+    width: 100%;
+    max-width: 800px;
+}
+
+.Medication-search-bar .search-bar h1 {
+    font-size: 45px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+}
+.Medication-search-bar .search-bar p{
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 5vh;
+}
+
+.Medication-search-bar .search-bar .search-form {
+    position: relative;
+    width: 100%;
+}
+
+.Medication-search-bar .search-bar input {
+    width: 100%;
+    height: 7vh;
+    border-radius: 3px;
+    border: none;
+    padding-left: 30px;
+    padding-right: 60px; 
+    box-sizing: border-box;
+}
+
+.Medication-search-bar .search-bar input::placeholder {
+    font-size: 17px;
+    font-weight: 400;
+    text-align: justify;
+    letter-spacing: 0.5px;
+}
+
+.Medication-search-bar .search-bar .submit-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+    border-radius: 0;
+    width: 20%;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: background-color 1s ease-in-out, color 1s ease-in-out;
+}
+
+.Medication-search-bar .search-bar .submit-button:hover {
+    background-color: blue;
+}
+
+
+.Medication-search-bar .search-bar .suggestions {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    width: 100%;
+    background-color: white;
+    color: black;
+    list-style: none;
+    border: 1px solid #ddd;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.Medication-search-bar .search-bar .suggestions li {
+    padding: 13px;
+    cursor: pointer;
+}
+
+.Medication-search-bar .search-bar .suggestions li:hover {
+    background-color: #f0f0f0;
+}
+
+
+.Medication-services {
+    background-color: white;
+    width: 80%;
+    height: 10vh;
+    position: relative;
+    bottom: 5vh;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.162);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    list-style: none;
+}
+.Medication-services li {
+    height: 100%;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 0.3s ease;
+    border-radius: inherit;
+}
+
+.Medication-services li.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.vertical-line {
+    border-left: 1px solid black; 
+    height: 65px; 
+    margin: 0;
+}
+.Medication-todo-container {
+    margin-top: 5vh;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative; 
+}
+
+.todo {
+    width: 80%;
+    height: 70vh;
+    border: 2px solid black;
+    border-radius: 5px;
+    position: relative; 
+    overflow: hidden; 
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; 
+}
+
+.todo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: #007bff;
+    border-radius: 0 0 50% 50%;
+    transition: width 1s ease, height 1s ease;
+    transform: translateX(-50%);
+    z-index: 1; 
+}
+
+.todo.expanded::before {
+    width: 200%;
+    height: 150%;
+    background-color: #007bff;
+}
+
+.to-do-entry {
+    width: 50vh;
+    height: 10vh;
+    border-radius: 5px;
+    color: white;
+    background-color: #007bff;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    position: relative; 
+    z-index: 2;
+}
+
+.to-do-entry:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 5px 5px black;
+}
+
+.medication-form {
+    display: none; 
+    flex-direction: column;
+    width: 90%;
+    z-index: 2;
+    padding-left: 5%;
+    padding-right: 5%;
+    gap: 3vh;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    position: absolute;
+    top: 10%;
+    transform: scale(0.9);
+}
+
+.medication-form.visible {
+    display: flex; 
+    opacity: 1; 
+    transform: scale(1);
+}
+
+.medication-form li {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    gap: 10px;
+}
+
+.medication-form li input {
+    width: 60vh;
+    height: 5vh;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 4px;
+    color: white;
+    padding-left: 3%;
+}
+
+.medication-form .timeclass {
+    display: flex;
+    flex-direction: row;
+    gap: 5vh;
+}
+
+.medication-form li input::placeholder {
+    color: rgba(255, 255, 255, 0.578);
+    text-transform: uppercase;
+}
+
+.btn {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn button {
+    background-color: white;
+    width: 20vh;
+    height: 6.5vh;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: black;
+    border: 2px solid black;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-left: 1%;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn button:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 5px 5px white;
+}
+.active-todo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+.todo-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.todo-table th, .todo-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ccc; /* Light black lines */
+}
+
+.todo-table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.todo-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.todo-table button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.todo-table button:hover {
+    background-color: #0056b3;
+}
+
+.todo-table .Actions button {
+    margin-right: 5px;
+}
+
+
+.medication-details{
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 20vh;
+    width: 80%;
+    height: autp;
+    display: flex;
+    flex-direction: column;
+    padding: 2% 3%;
+    z-index: 10;
+    border-radius: 15px;
+    border: 2px solid rgb(0, 0, 0);
+    gap: 10px;
+    font-size: 20px;
+    padding-bottom: 4%;
+}
+.medication-details h2{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 1vh;
+}
